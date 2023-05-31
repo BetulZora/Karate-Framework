@@ -35,7 +35,7 @@ Feature: How to assert in Karate using Karate assertions
     * match length == 6
 
 
-
+  @notME
   Scenario: match each, looping inside JSON Array objects
     # assert that all id's are number
     * match each fourSpartans[*].id == "#number"
