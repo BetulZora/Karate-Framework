@@ -36,6 +36,7 @@ Feature: Testing different end points of spartan API
     * def newSpartan = SpartanDG.createSpartan()
     # createSpartan actually returns a MAP, but object is turned into a JSON object by Karate
     * print newSpartan.name
+    # this part will POST the new Spartan and do assertions
     Given url spartanUrl
     And path "api/spartans"
     And header Accept = 'application/json'
@@ -45,7 +46,18 @@ Feature: Testing different end points of spartan API
     Then status 201
     And match response.success == 'A Spartan is Born!'
     And match response.data.name == newSpartan.name
+    # this will isolate the id of the Spartan we want to get and delete
     Then def idForDelete = response.data.id
+    # this is to do a GET request to have some fun
     Given url spartanUrl
     And path "api/spartans"
     And path idForDelete
+    When method get
+    Then status 200
+    And match response.name == newSpartan.name
+    # this will send a delete request to clean up
+    Given url spartanUrl
+    And path "api/spartans"
+    And path idForDelete
+    When method DELETE
+    Then status 204
