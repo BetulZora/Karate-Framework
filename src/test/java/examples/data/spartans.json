@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Meade",
+    "gender": "Male",
+    "phone": 3584128232
+  },
+  {
+    "id": 2,
+    "name": "Nels",
+    "gender": "Male",
+    "phone": 4218971348
+  },
+  {
+    "id": 3,
+    "name": "Fidole",
+    "gender": "Male",
+    "phone": 6105035231
+  },
+  {
+    "id": 4,
+    "name": "Paige",
+    "gender": "Female",
+    "phone": 3786741487
+  }
+]
